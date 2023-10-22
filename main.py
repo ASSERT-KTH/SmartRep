@@ -7,7 +7,7 @@ import sys
 
 method = sys.argv[1]
 dataset = sys.argv[2]
-start = sys.argv[3]
+start = int(sys.argv[3])
 
 if __name__ == "__main__":
     logger = set_logger(dataset, method)
@@ -107,8 +107,8 @@ if __name__ == "__main__":
 
 
     if method == "seq2seq":
-        from seq2seq.model import *
-        from seq2seq.config import Config
+        from seq2seq_attn.model import *
+        from seq2seq_attn.config import Config
         config = Config(dataset)
         model = Model(config)
         save_path = '{}/save/'.format(method)
